@@ -54,11 +54,8 @@
     "disallowSpacesInsideParentheses": true,
 
     "jsDoc": {
-        "checkAnnotations": true,
         "checkParamNames": true,
-        "requireParamTypes": true,
-        "checkReturnTypes": true,
-        "checkTypes": true
+        "requireParamTypes": true
     },
 
     "disallowMultipleLineBreaks": true,
@@ -66,6 +63,7 @@
     "disallowCommaBeforeLineBreak": null,
     "disallowDanglingUnderscores": null,
     "disallowEmptyBlocks": null,
+    "disallowMultipleLineStrings": null,
     "disallowTrailingComma": null,
     "requireCommaBeforeLineBreak": null,
     "requireDotNotation": null,
