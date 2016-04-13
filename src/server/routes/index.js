@@ -8,7 +8,6 @@ module.exports = function(app) {
     app.get(api + '/beerstyle/:id', getBeerStyle);
     app.get(api + '/beerstyles', getBeerStyles);
 
-
     function getCustomer(req, res, next) {
         var json = jsonfileservice.getJsonFromFile(data + 'customers.json');
         var customer = json.filter(function(c) {
