@@ -8,6 +8,9 @@ bower_components
 build
 #.tmp
 
+# for webstorm
+*.idea
+
 # User-specific files
 *.suo
 *.user

@@ -19,7 +19,7 @@ gulp.task('vet', function() {
         .src(config.alljs)
         .pipe($.if(args.verbose, $.print()))
         .pipe($.jscs())
-        .pipe($.jscs.reporter())
+        //.pipe($.jscs.reporter())
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish', {verbose: true}));
 });
