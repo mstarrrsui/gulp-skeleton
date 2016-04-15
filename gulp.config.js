@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function () {
     var client = './src/client/';
     var clientApp = client + 'app/';
     var report = './report/';
@@ -57,7 +57,7 @@ module.exports = function() {
             directory: './bower_components/',
             ignorePath: '../..'
         },
-        packages : [
+        packages: [
             './package.json',
             './bower.json'
         ],
@@ -70,7 +70,7 @@ module.exports = function() {
 
     };
 
-    config.getWiredepDefaultOptions = function() {
+    config.getWiredepDefaultOptions = function () {
         var options = {
             bowerJson: config.bower.json,
             directory: config.bower.directory,

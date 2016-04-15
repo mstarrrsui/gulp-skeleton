@@ -9,9 +9,9 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var port = process.env.PORT || config.defaultPort;
 
 gulp.task('help', $.taskListing);
-gulp.task('default',['help']);
+gulp.task('default', ['help']);
 
-gulp.task('vet', function() {
+gulp.task('vet', function () {
 
     log('Analyzing source with JSHint and JSCS');
 
@@ -24,7 +24,7 @@ gulp.task('vet', function() {
         .pipe($.jshint.reporter('jshint-stylish', {verbose: true}));
 });
 
-gulp.task('wiredep', function() {
+gulp.task('wiredep', function () {
     log('Wire up the bower css js and our app js into the html');
     var options = config.getWiredepDefaultOptions();
     var wiredep = require('wiredep').stream;
@@ -36,7 +36,7 @@ gulp.task('wiredep', function() {
         .pipe(gulp.dest(config.client));
 });
 
-gulp.task('inject', ['wiredep'], function() {
+gulp.task('inject', ['wiredep'], function () {
     log('Wire up the app css into the html, and call wiredep ');
 
     return gulp
@@ -45,7 +45,7 @@ gulp.task('inject', ['wiredep'], function() {
         .pipe(gulp.dest(config.client));
 });
 
-gulp.task('serve-dev', ['inject'], function() {
+gulp.task('serve-dev', ['inject'], function () {
 
     var isDev = true;
     var nodeEnv = isDev ? 'dev' : 'build';
@@ -63,7 +63,7 @@ gulp.task('serve-dev', ['inject'], function() {
     };
 
     $.nodemon(nodeOptions)
-        .on('restart', function(ev) {
+        .on('restart', function (ev) {
             log('*** nodemon restarted');
             log('files changed on restart:\n' + ev);
             // setTimeout(function() {
@@ -71,14 +71,14 @@ gulp.task('serve-dev', ['inject'], function() {
             //     browserSync.reload({stream: false});
             // }, config.browserReloadDelay);
         })
-        .on('start', function() {
+        .on('start', function () {
             log('*** nodemon started');
             startBrowserSync();
         })
-        .on('crash', function() {
+        .on('crash', function () {
             log('*** nodemon crashed: script crashed for some reason');
         })
-        .on('exit', function() {
+        .on('exit', function () {
             log('*** nodemon exited cleanly');
         });
 });
