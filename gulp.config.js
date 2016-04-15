@@ -1,6 +1,7 @@
 module.exports = function () {
     var client = './src/client/';
     var clientApp = client + 'app/';
+    var clientStyle = client + 'styles/';
     var report = './report/';
     var root = './';
     var server = './src/server/';
@@ -19,6 +20,7 @@ module.exports = function () {
         ],
         build: './build/',
         client: client,
+        theme: clientStyle + 'bootstrap-theme.css',
         css: temp + 'styles.css',
         fonts: './bower_components/font-awesome/fonts/**/*.*',
         html: clientApp + '**/*.html',
